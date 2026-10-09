@@ -11,3 +11,9 @@
 - [x] Replace misleading shared inquiry prompts; preserve all other page content.
 - [x] Check navigation, accessibility basics, 390px layout and existing tests.
 - [x] Document exact changed files, results, limitations and follow-ups in SPRINT-02.md; stop.
+
+# Sprint 03
+- [ ] Refine Services and three consultation topic pages with use cases, discovery and limits.
+- [ ] Clarify Products as future direction and a separate unverified pre-existing initiative.
+- [ ] Verify focused rules, navigation, metadata and desktop/390px layouts; preserve Home/About.
+- [ ] Document files, results, limitations and pending approvals in SPRINT-03.md; stop.
