@@ -16,3 +16,4 @@
 - Keep corporate data and metadata helpers in a browser-safe shared module to avoid inconsistent content between pages.
 - Keep corporate routes static and informational without forms, persistence, or network submission handlers until explicitly approved, so the foundation stays frontend-only.
 - Reuse corporate values and intended approach sections across Home and About, with canonical statements in the shared content module, to keep approved content consistent.
+- Keep consultation-detail and product-direction content in a separate browser-safe module with a reusable discovery section, so topic refinements leave approved Home/About wording unchanged.
