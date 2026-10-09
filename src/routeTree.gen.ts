@@ -10,33 +10,189 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SplatRouteImport } from './routes/$'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DiscussProjectRouteImport } from './routes/discuss-project'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAiSolutionsRouteImport } from './routes/services.ai-solutions'
+import { Route as ServicesCybersecurityIctRouteImport } from './routes/services.cybersecurity-ict'
+import { Route as ServicesSoftwareDevelopmentRouteImport } from './routes/services.software-development'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiscussProjectRoute = DiscussProjectRouteImport.update({
+  id: '/discuss-project',
+  path: '/discuss-project',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesAiSolutionsRoute = ServicesAiSolutionsRouteImport.update({
+  id: '/ai-solutions',
+  path: '/ai-solutions',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesCybersecurityIctRoute =
+  ServicesCybersecurityIctRouteImport.update({
+    id: '/cybersecurity-ict',
+    path: '/cybersecurity-ict',
+    getParentRoute: () => ServicesRoute,
+  } as any)
+const ServicesSoftwareDevelopmentRoute =
+  ServicesSoftwareDevelopmentRouteImport.update({
+    id: '/software-development',
+    path: '/software-development',
+    getParentRoute: () => ServicesRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/discuss-project': typeof DiscussProjectRoute
+  '/privacy': typeof PrivacyRoute
+  '/products': typeof ProductsRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/terms': typeof TermsRoute
+  '/services/ai-solutions': typeof ServicesAiSolutionsRoute
+  '/services/cybersecurity-ict': typeof ServicesCybersecurityIctRoute
+  '/services/software-development': typeof ServicesSoftwareDevelopmentRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/discuss-project': typeof DiscussProjectRoute
+  '/privacy': typeof PrivacyRoute
+  '/products': typeof ProductsRoute
+  '/terms': typeof TermsRoute
+  '/services/ai-solutions': typeof ServicesAiSolutionsRoute
+  '/services/cybersecurity-ict': typeof ServicesCybersecurityIctRoute
+  '/services/software-development': typeof ServicesSoftwareDevelopmentRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/discuss-project': typeof DiscussProjectRoute
+  '/privacy': typeof PrivacyRoute
+  '/products': typeof ProductsRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/terms': typeof TermsRoute
+  '/services/ai-solutions': typeof ServicesAiSolutionsRoute
+  '/services/cybersecurity-ict': typeof ServicesCybersecurityIctRoute
+  '/services/software-development': typeof ServicesSoftwareDevelopmentRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/$'
+    | '/about'
+    | '/contact'
+    | '/discuss-project'
+    | '/privacy'
+    | '/products'
+    | '/services'
+    | '/terms'
+    | '/services/ai-solutions'
+    | '/services/cybersecurity-ict'
+    | '/services/software-development'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/$'
+    | '/about'
+    | '/contact'
+    | '/discuss-project'
+    | '/privacy'
+    | '/products'
+    | '/terms'
+    | '/services/ai-solutions'
+    | '/services/cybersecurity-ict'
+    | '/services/software-development'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/$'
+    | '/about'
+    | '/contact'
+    | '/discuss-project'
+    | '/privacy'
+    | '/products'
+    | '/services'
+    | '/terms'
+    | '/services/ai-solutions'
+    | '/services/cybersecurity-ict'
+    | '/services/software-development'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  DiscussProjectRoute: typeof DiscussProjectRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProductsRoute: typeof ProductsRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +204,121 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/discuss-project': {
+      id: '/discuss-project'
+      path: '/discuss-project'
+      fullPath: '/discuss-project'
+      preLoaderRoute: typeof DiscussProjectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/ai-solutions': {
+      id: '/services/ai-solutions'
+      path: '/ai-solutions'
+      fullPath: '/services/ai-solutions'
+      preLoaderRoute: typeof ServicesAiSolutionsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/cybersecurity-ict': {
+      id: '/services/cybersecurity-ict'
+      path: '/cybersecurity-ict'
+      fullPath: '/services/cybersecurity-ict'
+      preLoaderRoute: typeof ServicesCybersecurityIctRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/software-development': {
+      id: '/services/software-development'
+      path: '/software-development'
+      fullPath: '/services/software-development'
+      preLoaderRoute: typeof ServicesSoftwareDevelopmentRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface ServicesRouteChildren {
+  ServicesAiSolutionsRoute: typeof ServicesAiSolutionsRoute
+  ServicesCybersecurityIctRoute: typeof ServicesCybersecurityIctRoute
+  ServicesSoftwareDevelopmentRoute: typeof ServicesSoftwareDevelopmentRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesAiSolutionsRoute: ServicesAiSolutionsRoute,
+  ServicesCybersecurityIctRoute: ServicesCybersecurityIctRoute,
+  ServicesSoftwareDevelopmentRoute: ServicesSoftwareDevelopmentRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  DiscussProjectRoute: DiscussProjectRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProductsRoute: ProductsRoute,
+  ServicesRoute: ServicesRouteWithChildren,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
