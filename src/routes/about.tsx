@@ -1,5 +1,25 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { PageIntro } from '@/components/site/page-intro';
-import { mission, vision, values, pageHead } from '@/lib/site-content';
-export const Route = createFileRoute('/about')({ head: () => pageHead('About', 'Discover the purpose, vision, mission, and values of ICK Technologies.'), component: AboutPage });
-function AboutPage() { return <><PageIntro title="Technology with a human purpose." eyebrow="About us" description="ICK Technologies is an emerging African technology brand with global ambitions. Our focus is practical, secure, intelligent, and accessible technology." /><section className="section-band"><div className="site-container"><p className="eyebrow mb-5 text-primary">Our purpose</p><h2 className="section-heading max-w-4xl">To advance technology and human progress by creating solutions that expand opportunities, unlock human potential, and improve lives.</h2><div className="mt-12 grid gap-10 border-t border-border pt-9 md:grid-cols-2"><div><h3 className="mb-4 text-2xl font-semibold">Our vision</h3><p className="body-copy">{vision}</p></div><div><h3 className="mb-4 text-2xl font-semibold">Our mission</h3><p className="body-copy">{mission}</p></div></div></div></section><section className="section-band bg-secondary"><div className="site-container"><p className="eyebrow mb-4 text-teal">What guides us</p><h2 className="section-heading mb-8">Our core values</h2><div className="grid gap-x-10 md:grid-cols-3">{values.map((value, i) => <div className="value-item" key={value}><span className="text-xs text-primary">0{i+1}</span><h3 className="text-lg font-semibold">{value}</h3></div>)}</div><p className="body-copy mt-9">Our corporate philosophy is Integrated Technology & Human Progress.</p></div></section></>; }
+import { ValuesSection, ApproachSection, ExploreBand } from '@/components/site/corporate-sections';
+import { mission, vision, purpose, pageHead } from '@/lib/site-content';
+
+export const Route = createFileRoute('/about')({
+  head: () => pageHead('About our purpose & principles', 'Learn about ICK Technologies: an emerging Africa-rooted technology initiative guided by an approved purpose, vision, mission, and six core values.'),
+  component: AboutPage,
+});
+
+function AboutPage() {
+  return <>
+    <PageIntro title="Rooted in Africa. Looking forward." eyebrow="About ICK Technologies" description="An emerging technology initiative with global ambitions—and a belief that meaningful progress starts with people." />
+
+    <section className="section-band" aria-labelledby="story-heading"><div className="site-container purpose-layout"><div><p className="eyebrow mb-4 text-primary">Our story</p><h2 id="story-heading" className="section-heading">A human perspective.<br />A technology focus.</h2></div><div><p className="purpose-statement">ICK Technologies is an emerging Africa-rooted technology initiative exploring how practical, secure, intelligent, and accessible technology can support human progress.</p><p className="body-copy mt-6">Our direction is shaped by the possibilities technology can create for individuals, businesses, and communities. The starting point is a real-world need: something to understand before proposing a solution.</p><p className="body-copy mt-4">With global ambitions, our focus remains grounded: explore thoughtfully, be transparent about limitations, and take a responsible approach to any future work.</p></div></div></section>
+
+    <section className="corporate-purpose-band" aria-labelledby="about-purpose-heading"><div className="site-container"><p className="eyebrow mb-5 text-enterprise-muted">Why we exist</p><h2 id="about-purpose-heading" className="text-base font-medium text-enterprise-muted">Our purpose</h2><p className="purpose-quote mt-6">{purpose}</p><div className="mt-10 border-t border-on-enterprise/20 pt-6"><p className="text-xs text-enterprise-muted">Our corporate philosophy</p><p className="mt-3 font-display text-lg font-medium">Integrated Technology & Human Progress</p></div></div></section>
+
+    <section className="section-band" aria-labelledby="direction-heading"><div className="site-container"><p className="eyebrow mb-4 text-primary">Our direction</p><h2 id="direction-heading" className="section-heading mb-10">The future we envision.<br />The purpose we work toward.</h2><div className="grid gap-9 md:grid-cols-2"><article className="direction-item"><span className="text-xs text-primary">01 / Vision</span><h3 className="mb-5 mt-4 text-2xl font-semibold">Our vision</h3><p className="body-copy text-base">{vision}</p></article><article className="direction-item"><span className="text-xs text-primary">02 / Mission</span><h3 className="mb-5 mt-4 text-2xl font-semibold">Our mission</h3><p className="body-copy text-base">{mission}</p></article></div></div></section>
+
+    <ValuesSection />
+    <ApproachSection about />
+    <ExploreBand about />
+  </>;
+}

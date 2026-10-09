@@ -14,4 +14,5 @@
 - Shared site chrome wraps one main element and the Outlet in the root route, so all content pages have consistent accessible navigation.
 - Use services.tsx as an Outlet layout with services.index.tsx as its content leaf, so service detail pages render correctly.
 - Keep corporate data and metadata helpers in a browser-safe shared module to avoid inconsistent content between pages.
-- Keep Sprint 01 routes static and informational without forms, persistence, or network submission handlers, so the foundation stays frontend-only.
+- Keep corporate routes static and informational without forms, persistence, or network submission handlers until explicitly approved, so the foundation stays frontend-only.
+- Reuse corporate values and intended approach sections across Home and About, with canonical statements in the shared content module, to keep approved content consistent.
