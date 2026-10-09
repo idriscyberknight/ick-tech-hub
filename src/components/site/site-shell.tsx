@@ -14,7 +14,7 @@ export function SiteHeader() {
     <Link to="/" className="wordmark" aria-label="ICK Technologies home">ICK <span>Technologies</span></Link>
     <nav aria-label="Main navigation" className="hidden items-center gap-7 lg:flex">{links}</nav>
     <Button asChild className="hidden lg:inline-flex"><Link to="/services">Explore our focus <ArrowUpRight aria-hidden="true" /></Link></Button>
-    <Button ref={menuTrigger} variant="ghost" size="icon" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)} className="lg:hidden">{open ? <X /> : <Menu />}</Button>
+    <Button ref={menuTrigger} variant="ghost" size="icon" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)} onKeyDown={e => { if (e.key === 'Escape') setOpen(false); }} className="lg:hidden">{open ? <X /> : <Menu />}</Button>
   </div><nav id="mobile-navigation" hidden={!open} aria-label="Mobile navigation" className="mobile-nav lg:hidden" onKeyDown={e => { if (e.key === 'Escape') { setOpen(false); menuTrigger.current?.focus(); } }}>{links}<Button asChild className="mt-4 w-full"><Link to="/services">Explore our focus <ArrowUpRight aria-hidden="true" /></Link></Button></nav></header></>;
 }
 export function SiteFooter() {

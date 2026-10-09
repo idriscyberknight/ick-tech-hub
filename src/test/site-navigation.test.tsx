@@ -11,6 +11,16 @@ import { SiteHeader } from '@/components/site/site-shell';
 
 afterEach(() => { cleanup(); location.pathname = '/'; });
 describe('Mobile navigation behavior', () => {
+  it('closes on Escape while focus remains on the trigger', () => {
+    render(<SiteHeader />);
+    const trigger = screen.getByRole('button', { name: 'Open navigation' });
+    trigger.focus();
+    fireEvent.click(trigger);
+    fireEvent.keyDown(trigger, { key: 'Escape' });
+    expect(trigger.getAttribute('aria-expanded')).toBe('false');
+    expect(trigger).toHaveFocus();
+  });
+
   it('returns focus to the trigger when Escape closes the menu', () => {
     render(<SiteHeader />);
     const trigger = screen.getByRole('button', { name: 'Open navigation' });
