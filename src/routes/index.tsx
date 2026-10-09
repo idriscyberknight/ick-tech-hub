@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({ head: () => pageHead('Technology & h
 function HomePage() {
   return <><section className="home-hero"><div className="hero-blueprint" aria-hidden="true" /><div className="site-container relative">
     <div className="flex items-center justify-between gap-4"><p className="eyebrow text-enterprise-muted">Technology with purpose</p><span className="hidden text-xs text-enterprise-muted md:block">African roots. Global ambitions.</span></div>
-    <h1 className="hero-title">ICK Technologies</h1><p className="mb-5 font-display text-3xl font-medium leading-snug md:text-4xl">Advancing technology.<br />Empowering human potential.</p>
+    <h1 className="hero-title">ICK Technologies</h1><p className="mb-5 font-display text-2xl font-medium leading-snug md:text-4xl">Advancing technology.<br />Empowering human potential.</p>
     <p className="hero-description">Creating solutions that expand opportunities, unlock human potential, and improve lives.</p>
     <div className="mt-8 flex flex-wrap gap-3"><Button asChild size="lg"><Link to="/services">Explore consultation topics <ArrowUpRight aria-hidden="true" /></Link></Button><Button asChild size="lg" variant="enterpriseOutline"><Link to="/about">Discover our purpose <ArrowRight aria-hidden="true" /></Link></Button></div>
     <div className="hero-bottom"><p className="max-w-sm text-sm leading-relaxed text-enterprise-muted">An emerging African technology brand<br />with a human-centered perspective.</p><Link to="/about" className="flex items-center gap-3 text-xs text-enterprise-muted">Our philosophy <span className="text-on-enterprise">Integrated Technology & Human Progress</span><ArrowUpRight size={16} aria-hidden="true" /></Link></div>
