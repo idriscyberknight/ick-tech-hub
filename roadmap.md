@@ -17,3 +17,10 @@
 - [x] Clarify Products as future direction and a separate unverified pre-existing initiative.
 - [x] Verify focused rules, navigation, metadata and desktop/390px layouts; preserve Home/About.
 - [x] Document files, results, limitations and pending approvals in SPRINT-03.md; stop.
+
+# Sprint 04
+- [x] Implement non-operational project inquiry preview with required and optional fields.
+- [x] Add client-side validation rules, accessible labels and clear no-submission notice.
+- [x] Disable submission; no API, storage, database or email integration.
+- [x] Update README and add SPRINT-04.md documentation.
+- [ ] Run and verify all project tests, lint, build, and responsive browser checks in a configured environment.
