@@ -23,4 +23,10 @@
 - [x] Add client-side validation rules, accessible labels and clear no-submission notice.
 - [x] Disable submission; no API, storage, database or email integration.
 - [x] Update README and add SPRINT-04.md documentation.
-- [ ] Run and verify all project tests, lint, build, and responsive browser checks in a configured environment.
+- [x] Run existing tests, lint, automatic preview build and responsive checks; repository-wide lint remains an explicitly documented pre-existing limitation.
+
+# Controlled frontend refinement
+- [x] Read-only audit of architecture, existing components and local security boundaries.
+- [x] Refine Home, About and Services overview without altering other page content.
+- [x] Verify navigation, mobile layouts, metadata, approved statements and disabled inquiry preview.
+- [x] Document results and limitations; preserve unpublished status and separate Sprint 05 work.
