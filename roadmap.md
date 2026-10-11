@@ -24,3 +24,9 @@
 - [x] Disable submission; no API, storage, database or email integration.
 - [x] Update README and add SPRINT-04.md documentation.
 - [ ] Run and verify all project tests, lint, build, and responsive browser checks in a configured environment.
+
+# Controlled frontend refinement
+- [x] Read-only audit of architecture, existing components and local security boundaries.
+- [ ] Refine Home, About and Services overview without altering other page content.
+- [ ] Verify navigation, mobile layouts, metadata, approved statements and disabled inquiry preview.
+- [ ] Document results and limitations; preserve unpublished status and separate Sprint 05 work.

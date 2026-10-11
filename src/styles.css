@@ -48,6 +48,7 @@
   --on-enterprise: oklch(1 0 0);
   --enterprise-muted: oklch(0.815 0.025 248);
   --teal: oklch(0.511 0.096 186.4);
+  --slate-text: oklch(0.446 0.043 257.281);
   --destructive: oklch(0.52 0.19 28);
   --radius: 6px;
 }
@@ -151,3 +152,46 @@
   .inquiry-disabled-button { min-height: 48px; width: 100%; padding: 12px 18px; border-radius: 6px; background: var(--muted); color: var(--muted-foreground); cursor: not-allowed; font-weight: 600; }
 }
 @media (max-width: 767px) { .inquiry-panel { padding: 20px; } .inquiry-notice { padding: 18px; } }
+
+/* Scoped corporate refinement: keep other routes and inquiry controls unchanged. */
+@layer components {
+  .refined-page .body-copy,
+  .refined-page .page-description { color: var(--slate-text); }
+  .refined-page .section-band { padding-block: 80px; }
+  .refined-page .section-heading { max-width: 680px; text-wrap: balance; }
+  .refined-page .section-lead { gap: 40px; }
+  .refined-page .service-item { padding: 32px; }
+  .refined-page .service-item h3 { line-height: 1.45; }
+  .refined-page .service-item:focus-visible { border-color: var(--primary); }
+  .refined-page .corporate-values { column-gap: 48px; }
+  .refined-page .corporate-value { padding-block: 32px; }
+  .refined-page .approach-step h3 { line-height: 1.5; }
+  .refined-page .page-intro { padding-block: 52px 60px; }
+  .refined-page .page-intro nav { flex-wrap: wrap; line-height: 1.6; }
+  .refined-page .page-title { font-size: 48px; max-width: 780px; text-wrap: balance; }
+  .refined-page .page-description { max-width: 680px; }
+  .refined-about .purpose-quote { font-size: 34px; line-height: 1.6; max-width: 980px; }
+  .refined-about .direction-item .body-copy { max-width: 520px; }
+  .refined-home .corporate-hero { padding-block: 48px 32px; }
+  .refined-home .hero-title { font-size: 56px; margin-block: 28px 16px; overflow-wrap: anywhere; }
+  .refined-home .hero-statement { font-size: 36px; line-height: 1.35; }
+  .refined-home .hero-description { max-width: 680px; line-height: 1.75; }
+  .refined-home .hero-bottom { margin-top: 32px; }
+}
+@media (max-width: 767px) {
+  .refined-page .section-band { padding-block: 48px; }
+  .refined-page .section-lead { gap: 20px; }
+  .refined-page .service-item { padding: 24px; }
+  .refined-page .page-intro { padding-block: 32px 40px; }
+  .refined-page .page-intro nav { margin-bottom: 24px; }
+  .refined-page .page-title { font-size: 34px; line-height: 1.3; }
+  .refined-page .corporate-value { padding-block: 26px; }
+  .refined-about .purpose-quote { font-size: 25px; }
+  .refined-home .corporate-hero { padding-block: 32px 28px; }
+  .refined-home .hero-title { font-size: 34px; line-height: 1.25; }
+  .refined-home .hero-statement { font-size: 26px; }
+  .refined-home .hero-description { font-size: 16px; }
+  .refined-home .hero-actions { display: grid; grid-template-columns: minmax(0,1fr); }
+  .refined-home .hero-actions a { white-space: normal; height: auto; min-height: 48px; padding-block: 12px; }
+  .refined-home .hero-bottom { margin-top: 28px; }
+}
