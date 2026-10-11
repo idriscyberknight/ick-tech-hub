@@ -17,3 +17,4 @@
 - Keep corporate routes static and informational without forms, persistence, or network submission handlers until explicitly approved, so the foundation stays frontend-only.
 - Reuse corporate values and intended approach sections across Home and About, with canonical statements in the shared content module, to keep approved content consistent.
 - Keep consultation-detail and product-direction content in a separate browser-safe module with a reusable discovery section, so topic refinements leave approved Home/About wording unchanged.
+- Scope corporate refinement styles beneath the existing page wrappers and reuse established site components, so unrelated routes and the inquiry preview retain their presentation and behavior.
