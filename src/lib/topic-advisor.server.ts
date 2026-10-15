@@ -20,7 +20,7 @@ export class AdvisorError extends Error {
 }
 
 export async function suggestTopics(text: string): Promise<AdvisorResult> {
-  const apiKey = process.env.LOVABLE_API_KEY;
+  const apiKey = process.env['LOVABLE_API_KEY'];
   if (!apiKey) throw new AdvisorError('The suggestion tool is not configured.', 500);
   const provider = createOpenAI({
     baseURL: 'https://ai.gateway.lovable.dev/v1',
