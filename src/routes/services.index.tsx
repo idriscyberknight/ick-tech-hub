@@ -44,6 +44,7 @@ function ServicesPage() {
           </p>
         </div>
       </section>
+      <TopicAdvisor />
       <TopicDiscovery />
       <section className="section-band" aria-labelledby="boundaries-heading">
         <div className="site-container grid gap-10 md:grid-cols-2">
