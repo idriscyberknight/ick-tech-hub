@@ -6,6 +6,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TopicDiscovery } from "@/components/site/topic-discovery";
+import { TopicAdvisor } from "@/components/site/topic-advisor";
 export const Route = createFileRoute("/services/")({
   head: () =>
     pageHead(
@@ -43,6 +44,7 @@ function ServicesPage() {
           </p>
         </div>
       </section>
+      <TopicAdvisor />
       <TopicDiscovery />
       <section className="section-band" aria-labelledby="boundaries-heading">
         <div className="site-container grid gap-10 md:grid-cols-2">
