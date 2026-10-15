@@ -5,7 +5,7 @@ import { createRateLimiter, validateChallenge, type AdvisorResult } from './topi
 const allow = createRateLimiter();
 
 export const suggestConsultationTopics = createServerFn({ method: 'POST' })
-  .inputValidator((data: unknown) => {
+  .validator((data: unknown) => {
     const v = validateChallenge((data as { text?: unknown })?.text);
     if (!v.ok) throw new Error(v.error);
     return { text: v.text };
