@@ -50,3 +50,9 @@ export function isAdvisorEnabled(flag: string | undefined): boolean {
   return flag === 'true';
 }
 export const ADVISOR_PAUSED_MESSAGE = 'The AI topic finder is paused while privacy and cost safeguards are reviewed. You can still explore the three topics below.';
+
+// Runs `run` only when the flag is exactly "true"; otherwise returns the paused result without touching `run`.
+export async function gateAdvisor<T>(flag: string | undefined, run: () => Promise<T>): Promise<T | { ok: false; paused: true; error: string }> {
+  if (!isAdvisorEnabled(flag)) return { ok: false, paused: true, error: ADVISOR_PAUSED_MESSAGE };
+  return run();
+}
