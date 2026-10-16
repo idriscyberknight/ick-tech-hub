@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { createRateLimiter, normalizeAdvisorResult, validateChallenge } from '@/lib/topic-advisor';
+import { isAdvisorEnabled, createRateLimiter, normalizeAdvisorResult, validateChallenge } from '@/lib/topic-advisor';
 
 describe('topic advisor rules', () => {
   it('rejects text shorter than 20 characters', () => expect(validateChallenge('too short').ok).toBe(false));
@@ -15,5 +15,10 @@ describe('topic advisor rules', () => {
     const r = normalizeAdvisorResult({ topics: [{ id: 'payments', reason: 'x' }, { id: 'ai-solutions', reason: 'y' }], questions: ['1', '2', '3', '4', '5', '6'], note: '' });
     expect(r.topics.map(t => t.id)).toEqual(['ai-solutions']);
     expect(r.questions).toHaveLength(5);
+  });
+  it('keeps AI requests off unless the flag is exactly "true"', () => {
+    expect(isAdvisorEnabled(undefined)).toBe(false);
+    expect(isAdvisorEnabled('1')).toBe(false);
+    expect(isAdvisorEnabled('true')).toBe(true);
   });
 });
