@@ -44,3 +44,9 @@ export function normalizeAdvisorResult(raw: unknown): AdvisorResult {
     .map(q => String(q).trim()).filter(Boolean).slice(0, ADVISOR_MAX_QUESTIONS).map(q => q.slice(0, 300));
   return { topics, questions, note: String(r.note ?? '').slice(0, 400) };
 }
+
+// Kill switch: AI requests stay off unless the server env flag is exactly "true".
+export function isAdvisorEnabled(flag: string | undefined): boolean {
+  return flag === 'true';
+}
+export const ADVISOR_PAUSED_MESSAGE = 'The AI topic finder is paused while privacy and cost safeguards are reviewed. You can still explore the three topics below.';
