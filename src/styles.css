@@ -93,6 +93,9 @@
     border-bottom: 1px solid var(--border);
   }
   .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--font-display);
     font-size: 22px;
     font-weight: 800;
@@ -100,6 +103,15 @@
   }
   .wordmark span {
     font-weight: 500;
+  }
+  .wordmark .brand-name {
+    font-weight: 800;
+  }
+  .brand-mark {
+    display: block;
+    height: 34px;
+    width: auto;
+    flex-shrink: 0;
   }
   .nav-link {
     display: inline-flex;
@@ -379,7 +391,7 @@
     width: calc(100% - 40px);
   }
   .wordmark {
-    font-size: 20px;
+    font-size: 18px;
   }
   .home-hero {
     padding: 43px 0 38px;
