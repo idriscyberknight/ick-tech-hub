@@ -28,4 +28,114 @@
 - PR #2, `Sprint 05: Founder Admin Security Scaffold — Review Required`, remains OPEN/UNMERGED on `feature/sprint-05-admin-auth` (reported head `74bf7eae3fc1971154927be5bd25db6d1368e096`). Admin scaffold and `20261011130000_founder_admin_authorization.sql` are branch-only, not main or applied DB state. Do not modify admin/founder/session/Supabase code, PRs or branches, merge, rebase, force push or deploy without explicit approval. Reconcile external migrations and review app CI separately; a skipped Supabase Preview check is not security verification.
 - Keep ICK Opportunities strictly separate and paused; do not integrate or modify it. Preserve approved corporate statements and consultation-first language; never invent legal status, customers, awards, staff or live service availability.
 - Treat historical sprint/refinement reports and test/lint counts as dated evidence, not current validation. Website was unpublished at the last pre-change check; no publish/deploy or production-readiness claim is authorized.
-- Workspace knowledge v1 is business direction; project knowledge is currently empty per founder audit. This docs patch does not change knowledge stores; Phase 03-B/v2 needs separate founder approval. External DB/PR/hosting facts above were supplied by that audit, not freshly checked remotely here.
+- - Knowledge synchronization completed on 2026-10-18:
+  Lovable Workspace Knowledge V2.2 and Ick Tech Hub
+  Project Knowledge V2.2 were updated with explicit
+  Founder authorization and verified after writing.
+  Both knowledge stores now contain approved governance
+  instructions.
+
+- This synchronization updated knowledge instructions
+  only. It did not modify source code, database schemas,
+  authentication systems, feature flags, deployment
+  configurations, or production services.
+
+- ICK Technologies Master Project Knowledge V2.2
+  is the Founder-approved internal corporate governance
+  reference. Its full confidential contents must not
+  be committed to this public repository.
+
+## Corporate Governance V2.2 — Approved 2026-10-18
+
+### Corporate Identity
+
+Company: ICK Technologies
+
+Corporate Philosophy:
+Integrated Technology & Human Progress.
+
+Corporate Identity:
+Version 3.0 — Founder Approved.
+
+The six approved Core Values are:
+
+1. Truth & Integrity
+2. Knowledge & Learning
+3. Service & Community
+4. Innovation & Excellence
+5. Security & Responsibility
+6. Collaboration & Respect
+
+### Governance Authority
+
+The Founder-approved Master Project Knowledge V2.2
+is the corporate governance reference.
+
+Lovable Workspace Knowledge V2.2 governs
+cross-project corporate instructions.
+
+Ick Tech Hub Project Knowledge V2.2 governs
+project-specific development requirements.
+
+Project-level instructions must not contradict
+approved corporate governance.
+
+### AI Development Rules
+
+AI assistants must:
+
+- Preserve existing security boundaries.
+- Follow the principle of least privilege.
+- Distinguish verified facts from assumptions.
+- Avoid inventing company credentials or achievements.
+- Explain security and privacy implications.
+- Respect Founder approval requirements.
+- Avoid unnecessary dependencies and expenses.
+- Never expose confidential information or secrets.
+
+### Protected Systems
+
+The following operations require separate,
+explicit authorization:
+
+- Production deployment.
+- GitHub pull request merging.
+- Database migrations.
+- Authentication activation.
+- AI service activation.
+- Project inquiry activation.
+- Payment integration.
+- Changes to security controls.
+- Publishing the corporate website.
+
+### Existing Security Restrictions
+
+Maintain these restrictions:
+
+- Inquiry submission remains disabled.
+- Inquiry backend and persistence remain disabled.
+- AI Topic Finder remains default OFF.
+- Founder Admin remains non-operational.
+- PR #2 remains subject to separate review.
+- ICK Opportunities remains separate.
+- Supabase migrations must not be rerun.
+- Secrets must never be exposed.
+
+### Change Management
+
+Corporate knowledge updates do not automatically
+authorize changes to application code.
+
+Any future implementation must identify:
+
+- Proposed changes.
+- Affected files.
+- Security implications.
+- Expected costs.
+- Testing requirements.
+- Approval requirements.
+- Rollback considerations.
+
+Do not modify unrelated systems.
+
+END OF CORPORATE GOVERNANCE V2.2
