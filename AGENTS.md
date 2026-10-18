@@ -28,7 +28,7 @@
 - PR #2, `Sprint 05: Founder Admin Security Scaffold — Review Required`, remains OPEN/UNMERGED on `feature/sprint-05-admin-auth` (reported head `74bf7eae3fc1971154927be5bd25db6d1368e096`). Admin scaffold and `20261011130000_founder_admin_authorization.sql` are branch-only, not main or applied DB state. Do not modify admin/founder/session/Supabase code, PRs or branches, merge, rebase, force push or deploy without explicit approval. Reconcile external migrations and review app CI separately; a skipped Supabase Preview check is not security verification.
 - Keep ICK Opportunities strictly separate and paused; do not integrate or modify it. Preserve approved corporate statements and consultation-first language; never invent legal status, customers, awards, staff or live service availability.
 - Treat historical sprint/refinement reports and test/lint counts as dated evidence, not current validation. Website was unpublished at the last pre-change check; no publish/deploy or production-readiness claim is authorized.
-- - Knowledge synchronization completed on 2026-10-18:
+- Knowledge synchronization completed on 2026-10-18:
   Lovable Workspace Knowledge V2.2 and Ick Tech Hub
   Project Knowledge V2.2 were updated with explicit
   Founder authorization and verified after writing.
