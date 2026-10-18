@@ -32,7 +32,60 @@ Historical reported results: Option A had 45 focused tests passing with scoped f
 
 Pending gates include legitimate source-of-truth and external migration reconciliation, PR #2 review, app CI, secret scan, privacy/legal approval, accessibility/performance verification and controlled launch approvals.
 
-Workspace knowledge v1 remains overarching business direction. Project knowledge is currently empty according to the founder's Phase 03 audit; this patch does not update either knowledge store. A future v2 project knowledge draft requires separate founder approval.
+Historical baseline (2026-10-17): corporate Workspace Knowledge was V1.0, and Ick Tech Hub Project Knowledge was empty.
+
+On 2026-10-18, with the Founder's explicit authorization, the Lovable Workspace Knowledge and the Ick Tech Hub Project Knowledge were updated to V2.2.
+
+Both updates were re-read and verified. These changes updated knowledge instructions only, not website source code, deployment, or live feature availability.
+
+## Corporate Governance Reference — Approved 18 October 2026
+
+ICK Technologies Master Project Knowledge V2.2 is the
+Founder-approved internal corporate governance reference.
+
+### Corporate Identity V3.0
+
+Corporate Philosophy:
+Integrated Technology & Human Progress.
+
+Purpose:
+Advance technology and human progress.
+
+Vision:
+Shape a future where technology advances human potential,
+empowers businesses, and creates progress for communities
+worldwide.
+
+Mission:
+Design, develop, and deliver secure, intelligent,
+accessible technologies that solve real problems,
+connect people and opportunities, and enable growth.
+
+### Approved Core Values
+
+1. Truth & Integrity
+2. Knowledge & Learning
+3. Service & Community
+4. Innovation & Excellence
+5. Security & Responsibility
+6. Collaboration & Respect
+
+### Governance Boundaries
+
+Corporate approval does not establish legal incorporation,
+operational readiness, or verified security compliance.
+
+The complete Master Project Knowledge V2.2 is confidential
+and must not be published in this public repository.
+
+Lovable Workspace Knowledge and Ick Tech Hub Project Knowledge
+were synchronized to V2.2 on 18 October 2026.
+
+Any source-code modifications, database migrations,
+production deployments, AI activation, or website
+publication require separate authorization.
+
+ICK Opportunities remains a separate product and project.
 
 ## Development
 
