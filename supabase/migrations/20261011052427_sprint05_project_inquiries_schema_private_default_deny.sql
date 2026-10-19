@@ -61,4 +61,3 @@ alter table public.project_inquiries force row level security;
 
 revoke all on table public.project_inquiries from public, anon, authenticated;
 revoke all on function public.project_inquiries_touch_updated_at() from public, anon, authenticated;
-  
