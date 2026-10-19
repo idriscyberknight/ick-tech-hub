@@ -23,3 +23,4 @@ ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA ick_private
 
 -- Preserve existing hard-deny posture of project_inquiries.
 -- No policies, no grants, no intake, no admin log-in/API endpoints introduced.
+ 
