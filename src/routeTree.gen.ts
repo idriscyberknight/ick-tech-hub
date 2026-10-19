@@ -18,6 +18,7 @@ import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProductsRouteImport } from './routes/products'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as AdminLoginRouteImport } from './routes/admin.login'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesAiSolutionsRouteImport } from './routes/services.ai-solutions'
 import { Route as ServicesCybersecurityIctRouteImport } from './routes/services.cybersecurity-ict'
@@ -68,6 +69,11 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -101,6 +107,7 @@ export interface FileRoutesByFullPath {
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
+  '/admin/login': typeof AdminLoginRoute
   '/services/ai-solutions': typeof ServicesAiSolutionsRoute
   '/services/cybersecurity-ict': typeof ServicesCybersecurityIctRoute
   '/services/software-development': typeof ServicesSoftwareDevelopmentRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/products': typeof ProductsRoute
   '/terms': typeof TermsRoute
+  '/admin/login': typeof AdminLoginRoute
   '/services/ai-solutions': typeof ServicesAiSolutionsRoute
   '/services/cybersecurity-ict': typeof ServicesCybersecurityIctRoute
   '/services/software-development': typeof ServicesSoftwareDevelopmentRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/products': typeof ProductsRoute
   '/services': typeof ServicesRouteWithChildren
   '/terms': typeof TermsRoute
+  '/admin/login': typeof AdminLoginRoute
   '/services/ai-solutions': typeof ServicesAiSolutionsRoute
   '/services/cybersecurity-ict': typeof ServicesCybersecurityIctRoute
   '/services/software-development': typeof ServicesSoftwareDevelopmentRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/services'
     | '/terms'
+    | '/admin/login'
     | '/services/ai-solutions'
     | '/services/cybersecurity-ict'
     | '/services/software-development'
@@ -162,6 +172,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/products'
     | '/terms'
+    | '/admin/login'
     | '/services/ai-solutions'
     | '/services/cybersecurity-ict'
     | '/services/software-development'
@@ -177,6 +188,7 @@ export interface FileRouteTypes {
     | '/products'
     | '/services'
     | '/terms'
+    | '/admin/login'
     | '/services/ai-solutions'
     | '/services/cybersecurity-ict'
     | '/services/software-development'
@@ -193,6 +205,7 @@ export interface RootRouteChildren {
   ProductsRoute: typeof ProductsRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   TermsRoute: typeof TermsRoute
+  AdminLoginRoute: typeof AdminLoginRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -260,6 +273,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/'
@@ -319,6 +339,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductsRoute: ProductsRoute,
   ServicesRoute: ServicesRouteWithChildren,
   TermsRoute: TermsRoute,
+  AdminLoginRoute: AdminLoginRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
