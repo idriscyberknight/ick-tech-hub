@@ -45,7 +45,13 @@ jobs:
       - name: Focused lint (new admin UI only - required)
         id: focused_lint
         continue-on-error: true
-        run: bunx eslint src/lib/admin-auth-policy.ts src/routes/admin.login.tsx src/test/admin-auth-policy.test.ts
+        run: |
+          bunx eslint \
+            src/lib/admin-auth-policy.ts \
+            src/routes/admin.login.tsx \
+            src/test/admin-auth-policy.test.ts \
+            src/test/admin-login-closed.test.tsx \
+            src/test/admin-closed-schema.test.ts
 
       - name: Repository-wide lint (existing debt - advisory only)
         id: repository_lint
