@@ -1,0 +1,94 @@
+# ICK Technologies - Phase A4 review-only checks.
+# No deployment, migration execution, secrets, or repository writes.
+name: Phase A4 - Review Branch CI (No Deploy)
+
+on:
+  push:
+    branches:
+      - review/sprint-05-admin-reconciliation-20261019
+    paths:
+      - '.github/workflows/phase-a4-review-ci.yml'
+      - 'src/**'
+      - 'package.json'
+      - 'bun.lock'
+      - 'vite.config.ts'
+      - 'tsconfig*.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: phase-a4-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-test-build:
+    if: github.repository == 'idriscyberknight/ick-tech-hub'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CI: 'true'
+      TOPIC_ADVISOR_ENABLED: 'false'
+
+    steps:
+      - name: Check out source without persisting credentials
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install locked dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Lint
+        id: lint
+        continue-on-error: true
+        run: bun run lint
+
+      - name: Unit tests
+        id: tests
+        continue-on-error: true
+        run: bun run test
+
+      - name: Production-mode build (not a deployment)
+        id: build
+        continue-on-error: true
+        run: bun run build
+
+      - name: Verify generated /admin/login route
+        id: routing
+        if: steps.build.outcome == 'success'
+        continue-on-error: true
+        run: |
+          if ! grep -Fq "'/admin/login'" src/routeTree.gen.ts; then
+            echo "Missing /admin/login in generated route tree" >&2
+            exit 1
+          fi
+          echo "Generated route tree contains /admin/login."
+
+      - name: Report all checks and fail on any problem
+        if: always()
+        env:
+          LINT: ${{ steps.lint.outcome }}
+          TESTS: ${{ steps.tests.outcome }}
+          BUILD: ${{ steps.build.outcome }}
+          ROUTING: ${{ steps.routing.outcome }}
+        run: |
+          {
+            echo "### ICK Technologies Phase A4 review"
+            echo ""
+            echo "| Check | Outcome |"
+            echo "| --- | --- |"
+            echo "| Lint | $LINT |"
+            echo "| Unit tests | $TESTS |"
+            echo "| Build | $BUILD |"
+            echo "| Generated /admin/login route | $ROUTING |"
+            echo ""
+            echo "No deployment, SQL execution or merge was performed by this workflow."
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$LINT" != success ] || [ "$TESTS" != success ] || [ "$BUILD" != success ] || [ "$ROUTING" != success ]; then
+            echo "Phase A4 checks did not all pass." >&2
+            exit 1
+          fi
