@@ -1,9 +1,11 @@
 import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 // These tests inspect tracked SQL source only. They do NOT query or modify Supabase.
-const migrationUrl = (name: string) => new URL(`../../supabase/migrations/${name}`, import.meta.url);
-const readMigration = (name: string) => readFileSync(migrationUrl(name), "utf8");
+const migrationPath = (name: string) =>
+  resolve(process.cwd(), "supabase", "migrations", name);
+const readMigration = (name: string) => readFileSync(migrationPath(name), "utf8");
 
 const inquiriesSql = readMigration(
   "20261011052427_sprint05_project_inquiries_schema_private_default_deny.sql",
@@ -11,9 +13,7 @@ const inquiriesSql = readMigration(
 const allowlistSql = readMigration(
   "20261011054845_sprint05_admin_allowlist_private_default_deny.sql",
 );
-const singleFounderSql = readMigration(
-  "20261011055259_sprint05_single_founder_admin_limit.sql",
-);
+const singleFounderSql = readMigration("20261011055259_sprint05_single_founder_admin_limit.sql");
 const appliedBaselineSql = [inquiriesSql, allowlistSql, singleFounderSql].join("\n");
 
 describe("Tracked admin database migrations remain deny-by-default", () => {
@@ -69,8 +69,7 @@ describe("Tracked admin database migrations remain deny-by-default", () => {
   });
 
   it("keeps the unapproved founder RPC migration absent from this review branch", () => {
-    expect(existsSync(migrationUrl("20261011130000_founder_admin_authorization.sql"))).toBe(
-      false,
-    );
+    const unapprovedRpcMigration = migrationPath("20261011130000_founder_admin_authorization.sql");
+    expect(existsSync(unapprovedRpcMigration)).toBe(false);
   });
 });
